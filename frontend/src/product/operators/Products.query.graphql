@@ -1,0 +1,15 @@
+query GetProducts {
+  products {
+    edges {
+      node {
+        id
+        title
+        price
+        images {
+          id
+          image
+        }
+      }
+    }
+  }
+}
