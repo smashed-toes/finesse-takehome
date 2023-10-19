@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "compile": "graphql-codegen",
     "watch": "graphql-codegen -w",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.yaml"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +48,10 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-codegen/near-operation-file-preset": "^3.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
     "@parcel/watcher": "^2.3.0",
-    "typescript": "^4.9.5",
-    "@graphql-codegen/client-preset": "4.1.0"
+    "typescript": "^4.9.5"
   }
 }

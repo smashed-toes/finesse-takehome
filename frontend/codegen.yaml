@@ -1,0 +1,21 @@
+schema: http://192.168.1.188:8000/graphql/
+overwrite: true
+documents: ./src/**/*.graphql
+generates:
+  ./src/utils/__generated__/graphqlTypes.ts:
+    plugins:
+      - typescript
+  src/:
+    preset: near-operation-file
+    presetConfig:
+      baseTypesPath: "utils/__generated__/graphqlTypes"
+      extension: .ts
+      folder: __generated__
+    plugins:
+      - typescript-operations
+      - typed-document-node
+    config:
+      useTypeImports: true
+hooks:
+  afterAllFileWrite:
+    - ./node_modules/eslint/bin/eslint.js --fix
