@@ -1,4 +1,4 @@
-import type * as Types from "../../../utils/__generated__/graphqlTypes";
+import type * as Types from "../../../../utils/__generated__/graphqlTypes";
 
 import type { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
 export type GetProductsQueryVariables = Types.Exact<{ [key: string]: never }>;
