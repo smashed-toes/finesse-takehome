@@ -1,13 +1,18 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductPage from "./components/product/ProductPage";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="min-h-screen relative">
-      <Header />
-      <div className="text-3xl font-bold underline">Hello World!</div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="products/:productId" element={<ProductPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
