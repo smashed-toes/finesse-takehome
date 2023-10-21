@@ -4,6 +4,12 @@ module.exports = {
   theme: {
     fontFamily: {
       secondary: ["carbon", "sans-serif"],
+      roboto: ["roboto", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        "blue-gray": "#565d6a",
+      },
     },
   },
   plugins: [],
