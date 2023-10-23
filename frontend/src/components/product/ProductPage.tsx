@@ -16,6 +16,7 @@ import {
   CreditCardOutlined,
   UpOutlined,
 } from "@ant-design/icons";
+import ProductCarousel from "./ProductCarousel";
 
 export default function ProductPage() {
   const { productId = "" } = useParams();
@@ -62,12 +63,13 @@ export default function ProductPage() {
   return (
     <div ref={topOfPageRef}>
       {data.product.images && (
-        <>
-          <img
-            src={`http://localhost:8000/${data.product.images[0].image}`}
-            alt={`${data.product.title} image 1`}
-          />
-        </>
+        // <>
+        //   <img
+        //     src={`http://localhost:8000/${data.product.images[0].image}`}
+        //     alt={`${data.product.title} image 1`}
+        //   />
+        // </>
+        <ProductCarousel images={data.product.images} />
       )}
       <div className="px-5 pt-7 pb-3">
         <div className="flex items-center justify-between py-2">
