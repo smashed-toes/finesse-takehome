@@ -3,7 +3,7 @@ import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
 
 export default function Header() {
   return (
-    <div className="h-16 w-screen flex justify-between items-center my-2 px-4 sticky top-0 bg-white">
+    <div className="h-16 w-screen flex justify-between items-center my-2 px-4 sticky z-10 top-0 bg-white">
       <div className="flex w-1/5">
         <MenuOutlined className="mr-3" style={{ fontSize: "24px" }} />
         <SearchOutlined style={{ fontSize: "24px" }} />

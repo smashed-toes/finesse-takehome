@@ -1,72 +1,59 @@
 import React, { useState } from "react";
 import { ImageType } from "../../utils/__generated__/graphqlTypes";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
+import styled from "styled-components";
+import { isClickableInput } from "@testing-library/user-event/dist/utils";
 
 interface ProductCarouselProps {
   images: Omit<ImageType, "product">[];
 }
 
+const StyledSwiper = styled(Swiper)`
+  & .swiper-button-next,
+  .swiper-button-prev {
+    color: black;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next {
+    right: 10px; /* Adjust the distance from the right as needed */
+  }
+
+  .swiper-pagination-bullet-active {
+    background: black;
+  }
+
+  z-index: 0;
+`;
+
 export default function ProductCarousel({ images }: ProductCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  //   const handlers = useSwipeable({
-  //     onSwipedLeft: () => handleSwipeRight(),
-  //     onSwipedRight: () => handleSwipeLeft(),
-  //   });
-
-  //   const handleSwipeLeft = () => {
-  //     if (currentIndex > 0) {
-  //       setCurrentIndex(currentIndex - 1);
-  //     }
-  //   };
-
-  //   const handleSwipeRight = () => {
-  //     if (currentIndex < images.length - 1) {
-  //       setCurrentIndex(currentIndex + 1);
-  //     }
-  //   };
-
   return (
-    <div className="image-carousel">
-      <div className="carousel-container">
-        <Swiper navigation modules={[Navigation]} slidesPerView={1}>
-          {images.map((image, index) => (
-            <SwiperSlide key={`key-${image.id}-${index}`}>
-              <img
-                key={index}
-                src={`http://localhost:8000/${image.image}`}
-                alt={`Image ${index + 1}`}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-      <div className="dot-indicators">
-        {images.map((_, index) => (
-          <div
+    <StyledSwiper
+      navigation
+      pagination={{ clickable: true }}
+      modules={[Navigation, Pagination]}
+      slidesPerView={1}
+    >
+      {images.map((image, index) => (
+        <SwiperSlide key={`key-${image.id}-${index}`}>
+          <img
             key={index}
-            className={`dot ${index === currentIndex ? "active" : ""}`}
-            onClick={() => setCurrentIndex(index)}
+            src={`http://10.0.1.238:8000/${image.image}`}
+            alt={`Image ${index + 1}`}
           />
-        ))}
-      </div>
-      {/* <button
-        className="carousel-control left"
-        onClick={handleSwipeLeft}
-        disabled={currentIndex === 0}
-      >
-        &lt;
-      </button>
-      <button
-        className="carousel-control right"
-        onClick={handleSwipeRight}
-        disabled={currentIndex === images.length - 1}
-      >
-        &gt;
-      </button> */}
-    </div>
+        </SwiperSlide>
+      ))}
+    </StyledSwiper>
   );
 }

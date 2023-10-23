@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { ProductByIdDocument } from "./operators/__generated__/ProductById.query";
@@ -62,15 +62,7 @@ export default function ProductPage() {
 
   return (
     <div ref={topOfPageRef}>
-      {data.product.images && (
-        // <>
-        //   <img
-        //     src={`http://localhost:8000/${data.product.images[0].image}`}
-        //     alt={`${data.product.title} image 1`}
-        //   />
-        // </>
-        <ProductCarousel images={data.product.images} />
-      )}
+      {data.product.images && <ProductCarousel images={data.product.images} />}
       <div className="px-5 pt-7 pb-3">
         <div className="flex items-center justify-between py-2">
           <h2 className="font-bold text-xl">{data.product.title}</h2>
