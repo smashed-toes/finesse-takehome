@@ -12,7 +12,7 @@ class ImageType(DjangoObjectType):
 class ProductType(DjangoObjectType):
     class Meta:
         model = Product
-        field = ('id', 'title', 'price', 'model_info', 'material_info')
+        field = ('id', 'title', 'price', 'product_details', 'model_info', 'material_info')
         use_connection = True
     images = DjangoListField(ImageType)
 

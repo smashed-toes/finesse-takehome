@@ -16,7 +16,7 @@ export default function QuantitySelector({
   return (
     <div className="flex flex-row rounded-lg border border-black justify-around align-center font-medium h-8">
       <button
-        className={`flex basis-1/3 justify-around text-lg ${
+        className={`flex basis-1/3 justify-around text-xl ${
           quantity <= 1 ? "text-black/20" : "text-black"
         }`}
         onClick={() => setQuantity(quantity - 1)}
@@ -37,7 +37,7 @@ export default function QuantitySelector({
         />
       </div>
       <button
-        className="flex basis-1/3 justify-around text-lg"
+        className="flex basis-1/3 justify-around text-xl"
         onClick={() => setQuantity(quantity + 1)}
       >
         <div>+</div>

@@ -59,6 +59,7 @@ export type ProductType = {
   materialInfo: Scalars['String']['output'];
   modelInfo?: Maybe<Scalars['String']['output']>;
   price: Scalars['Float']['output'];
+  productDetails?: Maybe<Scalars['String']['output']>;
   title: Scalars['String']['output'];
 };
 

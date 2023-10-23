@@ -3,6 +3,9 @@ query ProductById($productId: ID!) {
     id
     title
     price
+    productDetails
+    modelInfo
+    materialInfo
     images {
       id
       image

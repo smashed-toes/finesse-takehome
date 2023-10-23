@@ -1,4 +1,4 @@
-schema: http://192.168.1.188:8000/graphql/
+schema: http://localhost:8000/graphql/
 overwrite: true
 documents: ./src/**/*.graphql
 generates:

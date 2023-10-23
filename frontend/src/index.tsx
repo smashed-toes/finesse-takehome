@@ -10,7 +10,7 @@ import {
 } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: "http://192.168.1.188:8000/graphql/",
+  uri: "http://localhost:8000/graphql/",
   fetchOptions: {
     mode: "cors",
   },

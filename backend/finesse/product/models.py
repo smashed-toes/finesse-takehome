@@ -5,6 +5,7 @@ class Product(models.Model):
     # add uuid?
     title = models.CharField(max_length=100)
     price = models.FloatField()
+    product_details = models.TextField(null=True, default=None)
     model_info = models.TextField(null=True, default=None)
     material_info = models.TextField(default='There is no info on the materials')
 
