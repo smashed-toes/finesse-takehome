@@ -16,6 +16,10 @@ class ProductType(DjangoObjectType):
         use_connection = True
     images = DjangoListField(ImageType)
 
+    def resolve_images(self, info):
+        # Filter images based on the current product's id
+        return Image.objects.filter(product_id=self.id)
+
 class Query(ObjectType):
     products = DjangoConnectionField(ProductType)
     product = Field(ProductType, id=Argument(ID, required=True))
