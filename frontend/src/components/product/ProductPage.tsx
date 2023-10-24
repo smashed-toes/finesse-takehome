@@ -123,8 +123,8 @@ export default function ProductPage() {
           </div>
         </div>
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
-        <div className="flex w-full h-8 my-4 border border-black rounded-lg items-center justify-center font-bold bg-black text-white hover:bg-white hover:text-black">
-          ADD TO CART
+        <div className="flex w-full h-12 my-4 border border-black rounded-lg items-center justify-center font-bold bg-black text-white hover:bg-white hover:text-black">
+          Add to Cart
         </div>
         <h3 className="font-bold text-xl my-2">Product Details</h3>
         <p className="font-roboto">{data.product.productDetails}</p>

@@ -33,7 +33,7 @@ export default function QuantitySelector({
           onChange={handleInputChange}
           bordered={false}
           controls={false}
-          min={0}
+          min={1}
         />
       </div>
       <button
