@@ -8,9 +8,10 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import { SERVER_ADDRESS } from "./utils/constants";
 
 const httpLink = createHttpLink({
-  uri: "http://10.0.1.238:8000/graphql/",
+  uri: `http://${SERVER_ADDRESS}:8000/graphql/`,
   fetchOptions: {
     mode: "cors",
   },

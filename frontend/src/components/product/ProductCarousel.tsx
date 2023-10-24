@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styled from "styled-components";
-import { isClickableInput } from "@testing-library/user-event/dist/utils";
+import { SERVER_ADDRESS } from "../../utils/constants";
 
 interface ProductCarouselProps {
   images: Omit<ImageType, "product">[];
@@ -49,7 +49,7 @@ export default function ProductCarousel({ images }: ProductCarouselProps) {
         <SwiperSlide key={`key-${image.id}-${index}`}>
           <img
             key={index}
-            src={`http://10.0.1.238:8000/${image.image}`}
+            src={`http://${SERVER_ADDRESS}:8000/${image.image}`}
             alt={`Image ${index + 1}`}
           />
         </SwiperSlide>

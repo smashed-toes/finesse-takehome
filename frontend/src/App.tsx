@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./components/product/ProductPage";
 import Layout from "./components/Layout";
 import { ConfigProvider } from "antd";
+import ScrollToTop from "./utils/helpers/ScrollToTop";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       }}
     >
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="products/:productId" element={<ProductPage />} />

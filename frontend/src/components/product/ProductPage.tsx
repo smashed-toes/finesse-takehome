@@ -17,6 +17,9 @@ import {
   UpOutlined,
 } from "@ant-design/icons";
 import ProductCarousel from "./ProductCarousel";
+import { GetProductsDocument } from "./operators/__generated__/Products.query";
+import { SERVER_ADDRESS } from "../../utils/constants";
+import SuggestionCarousel from "./SuggestionCarousel";
 
 export default function ProductPage() {
   const { productId = "" } = useParams();
@@ -48,6 +51,8 @@ export default function ProductPage() {
   const { loading, data, error } = useQuery(ProductByIdDocument, {
     variables: { productId },
   });
+
+  const { data: pData, error: pError } = useQuery(GetProductsDocument);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -173,6 +178,11 @@ export default function ProductPage() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="px-4 mb-4">
+        {pData && pData.products && pData.products.edges && !pError && (
+          <SuggestionCarousel productData={pData} currentId={data.product.id} />
+        )}
       </div>
       <div
         className="flex w-full border-t border-gray-200 justify-center items-center font-secondary py-5"
