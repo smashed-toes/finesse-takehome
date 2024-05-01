@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class Product(models.Model):
-    # add uuid?
     title = models.CharField(max_length=100)
     price = models.FloatField()
     product_details = models.TextField(null=True, default=None)
@@ -19,3 +18,4 @@ class Image(models.Model):
 
     def __str__(self):
         return f"Image of {self.product.title}"
+    

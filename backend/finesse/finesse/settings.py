@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-8(z7p%-)8e!k%jz4$nug@on)pd5q3d#iq^-llrw8ea%z_hz6)l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.188', '10.0.1.238', '192.168.86.184']
+#TODO: Add your IP address to this array here.
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -59,11 +60,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+#TODO: Add your 'http://<your-ip-address>:3000' here to allow for access with mobile device
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'http://192.168.1.188:3000',
-    'http://10.0.1.238:3000',
-    'http://192.168.86.184:3000'
 ]
 
 ROOT_URLCONF = 'finesse.urls'
