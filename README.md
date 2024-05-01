@@ -2,12 +2,16 @@
 
 ### Running Instructions:
 
-To run this code locally, complete the following steps.
+To run this code locally, complete the following steps:
 
 1. Clone the repo
-2. Navigate to `backend/finesse` in your terminal. Run the server by running `python3 manage.py runserver <your-ip-address>:8000`. Including your ip address will allow you to access the program on your phone connected to the same wifi address.
-3. In a separate window of your terminal, navigate to `frontend`. Install dependencies using `npm install` and run it with `npm run start`.
-4. Access a product page by navigating to `http://<your-ip-address>:3000/products/3`. You will find other valid product pages at `products/4` and `products/5` as well.
+2. Input your IP Address into the following locations to allow for simultaneous testing on laptop and on mobile.
+   - The [server address constant](https://github.com/smashed-toes/finesse-takehome/blob/8a999c3b546ef4c7228a4fb1e05168d35cd859a5/frontend/src/utils/constants.tsx#L2) in the frontend.
+   - The [allowed hosts array](https://github.com/smashed-toes/finesse-takehome/blob/8a999c3b546ef4c7228a4fb1e05168d35cd859a5/backend/finesse/finesse/settings.py#L30) in the django settings.
+   - The [CORS allowed origins array](https://github.com/smashed-toes/finesse-takehome/blob/8a999c3b546ef4c7228a4fb1e05168d35cd859a5/backend/finesse/finesse/settings.py#L64), also in the django settings.
+3. Navigate to `backend/finesse` in your terminal. Run the server by running `python3 manage.py runserver <your-ip-address>:8000`. Including your ip address will allow you to access the program on your phone connected to the same wifi address.
+4. In a separate window of your terminal, navigate to `frontend`. Install dependencies using `npm install` and run it with `npm run start`.
+5. Access a product page by navigating to `http://<your-ip-address>:3000/products/3`. You will find other valid product pages at `products/4` and `products/5` as well.
 
 ### Goal:
 
